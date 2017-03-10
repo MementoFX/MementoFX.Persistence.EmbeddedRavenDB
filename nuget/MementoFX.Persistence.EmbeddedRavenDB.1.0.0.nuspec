@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>MementoFX.Persistence.EmbeddedRavenDB</id>
+        <version>1.0.0</version>
+        <title>MementoFX EmbeddedRavenDB</title>
+        <authors>Mastreeno ltd</authors>
+        <owners>Mastreeno ltd</owners>
+        <licenseUrl>http://www.mastreeno.com/license/evaluation</licenseUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <description>A embedded RavenDB powered event store for MementoFX</description>
+        <copyright>Copyright 2016 Mastreeno ltd. All rights reserved</copyright>
+        <tags>mementofx memento ravendb cqrs event store ddd</tags>
+        <dependencies>
+            <dependency id="MementoFX" version="1.0.0" />
+            <dependency id="RavenDB.Embedded" version="3.0.30100" />
+            <dependency id="System.Linq.Dynamic" version="1.0.6" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\src\MementoFX.Persistence.EmbeddedRavenDB\bin\Release\Memento.Persistence.EmbeddedRavenDB.dll" target="lib\net452\Memento.Persistence.EmbeddedRavenDB.dll" />
+        <file src="..\src\MementoFX.Persistence.EmbeddedRavenDB\bin\Release\Memento.Persistence.EmbeddedRavenDB.dll.config" target="lib\net452\Memento.Persistence.EmbeddedRavenDB.dll.config" />
+        <file src="..\src\MementoFX.Persistence.EmbeddedRavenDB\bin\Release\Memento.Persistence.EmbeddedRavenDB.pdb" target="lib\net452\Memento.Persistence.EmbeddedRavenDB.pdb" />
+        <file src="..\src\MementoFX.Persistence.EmbeddedRavenDB\bin\Release\Memento.Persistence.EmbeddedRavenDB.XML" target="lib\net452\Memento.Persistence.EmbeddedRavenDB.XML" />
+    </files>
+</package>
