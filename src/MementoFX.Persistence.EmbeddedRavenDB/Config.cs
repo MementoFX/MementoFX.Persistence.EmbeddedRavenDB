@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace Memento.Persistence.EmbeddedRavenDB
+namespace MementoFX.Persistence.EmbeddedRavenDB
 {
     static class Config
     {

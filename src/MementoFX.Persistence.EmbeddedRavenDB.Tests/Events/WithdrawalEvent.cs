@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Memento.Persistence.EmbeddedRavenDB.Tests.Events
+namespace MementoFX.Persistence.EmbeddedRavenDB.Tests.Events
 {
     public class WithdrawalEvent : UnitTestFriendlyDomainEvent
     {

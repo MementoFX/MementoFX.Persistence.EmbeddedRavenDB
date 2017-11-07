@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Memento.Persistence.EmbeddedRavenDB.Listeners
+namespace MementoFX.Persistence.EmbeddedRavenDB.Listeners
 {
     class PatchDomainEventsApplyingMementoMetadata : IDocumentStoreListener
     {

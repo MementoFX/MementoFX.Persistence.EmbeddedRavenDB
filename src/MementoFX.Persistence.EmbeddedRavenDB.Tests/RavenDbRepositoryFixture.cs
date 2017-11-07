@@ -1,29 +1,28 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
-using NUnit.Framework;
+using Xunit;
 using Raven.Client.Embedded;
 using Raven.Client.Indexes;
 using Moq;
 using SharpTestsEx;
-using Memento.Persistence.EmbeddedRavenDB.Tests.Events;
-using Memento.Persistence.EmbeddedRavenDB.Tests.Model;
+using MementoFX.Persistence.EmbeddedRavenDB.Tests.Events;
+using MementoFX.Persistence.EmbeddedRavenDB.Tests.Model;
 using Raven.Tests.Helpers;
-using Memento.Messaging;
-using Memento.Persistence.EmbeddedRavenDB.Indexes;
-using Memento.Persistence.EmbeddedRavenDB.Listeners;
+using MementoFX.Messaging;
+using MementoFX.Persistence.EmbeddedRavenDB.Indexes;
+using MementoFX.Persistence.EmbeddedRavenDB.Listeners;
 
-namespace Memento.Persistence.EmbeddedRavenDB.Tests
+namespace MementoFX.Persistence.EmbeddedRavenDB.Tests
 {
-    [TestFixture]
-    public class RavenDbRepositoryFixture : RavenTestBase
+    
+    public class RavenDbRepositoryFixture : RavenTestBase, IDisposable
     {
         private EmbeddableDocumentStore documentStore;
         private EmbeddedRavenDbEventStore EventStore;
 
         
-        [SetUp]
-        public void SetUp()
+        public RavenDbRepositoryFixture()
         {
             documentStore = new EmbeddableDocumentStore
             {
@@ -41,13 +40,12 @@ namespace Memento.Persistence.EmbeddedRavenDB.Tests
             EventStore = eventStore;
         }
 
-        [TearDown]
-        public void CleanUp()
+        void IDisposable.Dispose()
         {
             documentStore.Dispose();
         }
 
-        [Test]
+        [Fact]
         public void Ctor_should_throw_ArgumentNullException_on_null_eventStore_and_value_of_parameter_should_be_eventStore()
         {
             Executing.This(() => new Repository(null))
@@ -61,7 +59,7 @@ namespace Memento.Persistence.EmbeddedRavenDB.Tests
                            .EqualTo("eventStore");
         }
 
-        //[Test]
+        //[Fact]
         //public void Test_EventCount()
         //{
         //    var currentAccountId = Guid.NewGuid();
@@ -83,11 +81,11 @@ namespace Memento.Persistence.EmbeddedRavenDB.Tests
         //    WaitForIndexing(documentStore);
         //    var sut = new Repository(EventStore);
         //    var currentAccount = sut.GetById<CurrentAccount>(currentAccountId);
-        //    Assert.AreEqual<int>(2, currentAccount.OccurredEvents.Count());
+        //    Assert.Equal<int>(2, currentAccount.OccurredEvents.Count());
         //}
 
 
-        //[Test]
+        //[Fact]
         //public void Test_EventCount_at_a_specific_date()
         //{
         //    var currentAccountId = Guid.NewGuid();
@@ -109,10 +107,10 @@ namespace Memento.Persistence.EmbeddedRavenDB.Tests
         //    WaitForIndexing(documentStore);
         //    var sut = new Repository(EventStore);
         //    var currentAccount = sut.GetById<CurrentAccount>(currentAccountId, DateTime.Now.AddMonths(2));
-        //    Assert.AreEqual<int>(2, currentAccount.OccurredEvents.Count());
+        //    Assert.Equal<int>(2, currentAccount.OccurredEvents.Count());
         //}
 
-        [Test]
+        [Fact]
         public void Test_EventReplaying_evaluating_CurrentAccountBalance_using_a_stream_containing_past_events_only()
         {
             var currentAccountId = Guid.NewGuid();
@@ -134,10 +132,10 @@ namespace Memento.Persistence.EmbeddedRavenDB.Tests
             WaitForIndexing(documentStore);
             var sut = new Repository(EventStore);
             var currentAccount = sut.GetById<CurrentAccount>(currentAccountId, DateTime.Now.AddMonths(2));
-            Assert.AreEqual(100, currentAccount.Balance);
+            Assert.Equal(100, currentAccount.Balance);
         }
 
-        [Test]
+        [Fact]
         public void Test_EventReplaying_evaluating_CurrentAccountBalance_using_a_stream_containing_both_past_and_future_events()
         {
             var currentAccountId = Guid.NewGuid();
@@ -168,10 +166,10 @@ namespace Memento.Persistence.EmbeddedRavenDB.Tests
             var sut = new Repository(EventStore);
             var currentAccount = sut.GetById<CurrentAccount>(currentAccountId, DateTime.Now.AddMonths(2));
 
-            Assert.AreEqual(100, currentAccount.Balance);
+            Assert.Equal(100, currentAccount.Balance);
         }
 
-        [Test]
+        [Fact]
         public void Test_EventReplaying_evaluating_CurrentAccountBalance_using_a_stream_containing_past_events_only_and_a_different_timeline()
         {
             var currentAccountId = Guid.NewGuid();
@@ -202,10 +200,10 @@ namespace Memento.Persistence.EmbeddedRavenDB.Tests
             WaitForIndexing(documentStore);
             var sut = new Repository(EventStore);
             var currentAccount = sut.GetById<CurrentAccount>(currentAccountId, DateTime.Now.AddMonths(3));
-            Assert.AreEqual(100, currentAccount.Balance);
+            Assert.Equal(100, currentAccount.Balance);
         }
 
-        [Test]
+        [Fact]
         public void Test_Timeline_specific_EventReplaying_evaluating_CurrentAccountBalance_using_a_stream_containing_both_past_and_future_events()
         {
             var currentAccountId = Guid.NewGuid();
@@ -239,7 +237,7 @@ namespace Memento.Persistence.EmbeddedRavenDB.Tests
             WaitForIndexing(documentStore);
             var sut = new Repository(EventStore);
             var currentAccount = sut.GetById<CurrentAccount>(currentAccountId, timelineId, DateTime.Now.AddMonths(3));
-            Assert.AreEqual(50, currentAccount.Balance);
+            Assert.Equal(50, currentAccount.Balance);
         }
     }
 }

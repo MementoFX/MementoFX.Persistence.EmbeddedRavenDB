@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Memento.Domain;
-using Memento.Persistence.EmbeddedRavenDB.Tests.Events;
+using MementoFX.Domain;
+using MementoFX.Persistence.EmbeddedRavenDB.Tests.Events;
 
-namespace Memento.Persistence.EmbeddedRavenDB.Tests.Model
+namespace MementoFX.Persistence.EmbeddedRavenDB.Tests.Model
 {
     public class CurrentAccount : Aggregate
     {

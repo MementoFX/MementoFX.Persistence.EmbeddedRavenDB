@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Memento.Domain;
+using MementoFX.Domain;
 
-namespace Memento.Persistence.EmbeddedRavenDB.Tests.Model
+namespace MementoFX.Persistence.EmbeddedRavenDB.Tests.Model
 {
     public class Invoice : Aggregate
     {

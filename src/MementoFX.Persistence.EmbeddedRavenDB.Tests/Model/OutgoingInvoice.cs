@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Memento.Persistence.EmbeddedRavenDB.Tests.Model
+namespace MementoFX.Persistence.EmbeddedRavenDB.Tests.Model
 {
     public class OutgoingInvoice : Invoice
     {

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Memento.Persistence.EmbeddedRavenDB.Indexes
+namespace MementoFX.Persistence.EmbeddedRavenDB.Indexes
 {
     public class DomainEvents_Stream : AbstractIndexCreationTask
     {

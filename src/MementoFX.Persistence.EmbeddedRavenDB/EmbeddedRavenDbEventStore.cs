@@ -7,13 +7,13 @@ using Raven.Database.Server;
 using Raven.Abstractions.Data;
 using Raven.Client.Indexes;
 using Raven.Json.Linq;
-using Memento.Domain;
-using Memento.Messaging;
-using Memento.Persistence;
-using Memento.Persistence.EmbeddedRavenDB.Listeners;
-using Memento.Persistence.EmbeddedRavenDB.Indexes;
+using MementoFX.Domain;
+using MementoFX.Messaging;
+using MementoFX.Persistence;
+using MementoFX.Persistence.EmbeddedRavenDB.Listeners;
+using MementoFX.Persistence.EmbeddedRavenDB.Indexes;
 
-namespace Memento.Persistence.EmbeddedRavenDB
+namespace MementoFX.Persistence.EmbeddedRavenDB
 {
     /// <summary>
     /// Provides an implementation of a Memento event store

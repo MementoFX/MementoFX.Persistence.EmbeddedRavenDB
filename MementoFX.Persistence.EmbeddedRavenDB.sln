@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Memento.Persistence.EmbeddedRavenDB", "src\MementoFX.Persistence.EmbeddedRavenDB\Memento.Persistence.EmbeddedRavenDB.csproj", "{99F143E6-8764-4D53-92FE-B6EDAA72E229}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MementoFX.Persistence.EmbeddedRavenDB", "src\MementoFX.Persistence.EmbeddedRavenDB\MementoFX.Persistence.EmbeddedRavenDB.csproj", "{99F143E6-8764-4D53-92FE-B6EDAA72E229}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Memento.Persistence.EmbeddedRavenDB.Tests", "src\MementoFX.Persistence.EmbeddedRavenDB.Tests\Memento.Persistence.EmbeddedRavenDB.Tests.csproj", "{646FF4D6-904C-4BCA-8DDD-FAF92E52FC69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MementoFX.Persistence.EmbeddedRavenDB.Tests", "src\MementoFX.Persistence.EmbeddedRavenDB.Tests\MementoFX.Persistence.EmbeddedRavenDB.Tests.csproj", "{646FF4D6-904C-4BCA-8DDD-FAF92E52FC69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,17 @@ Global
 		{99F143E6-8764-4D53-92FE-B6EDAA72E229}.Release|x86.Build.0 = Release|Any CPU
 		{646FF4D6-904C-4BCA-8DDD-FAF92E52FC69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{646FF4D6-904C-4BCA-8DDD-FAF92E52FC69}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{646FF4D6-904C-4BCA-8DDD-FAF92E52FC69}.Debug|x86.ActiveCfg = Debug|x86
-		{646FF4D6-904C-4BCA-8DDD-FAF92E52FC69}.Debug|x86.Build.0 = Debug|x86
+		{646FF4D6-904C-4BCA-8DDD-FAF92E52FC69}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{646FF4D6-904C-4BCA-8DDD-FAF92E52FC69}.Debug|x86.Build.0 = Debug|Any CPU
 		{646FF4D6-904C-4BCA-8DDD-FAF92E52FC69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{646FF4D6-904C-4BCA-8DDD-FAF92E52FC69}.Release|Any CPU.Build.0 = Release|Any CPU
-		{646FF4D6-904C-4BCA-8DDD-FAF92E52FC69}.Release|x86.ActiveCfg = Release|x86
-		{646FF4D6-904C-4BCA-8DDD-FAF92E52FC69}.Release|x86.Build.0 = Release|x86
+		{646FF4D6-904C-4BCA-8DDD-FAF92E52FC69}.Release|x86.ActiveCfg = Release|Any CPU
+		{646FF4D6-904C-4BCA-8DDD-FAF92E52FC69}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D2C47B8-C1A5-4B51-A2E0-DAAFC6A8E182}
 	EndGlobalSection
 EndGlobal
