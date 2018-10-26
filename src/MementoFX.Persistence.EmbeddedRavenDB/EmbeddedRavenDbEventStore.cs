@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using Raven.Abstractions.Data;
 using Raven.Client.Embedded;
+using Raven.Client.Indexes;
 using Raven.Client.Linq;
 using Raven.Database.Server;
-using Raven.Abstractions.Data;
-using Raven.Client.Indexes;
 using Raven.Json.Linq;
 using MementoFX.Domain;
 using MementoFX.Messaging;
 using MementoFX.Persistence;
-using MementoFX.Persistence.EmbeddedRavenDB.Listeners;
 using MementoFX.Persistence.EmbeddedRavenDB.Indexes;
+using MementoFX.Persistence.EmbeddedRavenDB.Listeners;
 
 namespace MementoFX.Persistence.EmbeddedRavenDB
 {
@@ -82,7 +83,7 @@ namespace MementoFX.Persistence.EmbeddedRavenDB
         /// <typeparam name="T">The type of the event</typeparam>
         /// <param name="filter">The requirement</param>
         /// <returns>The events which satisfy the given requirement</returns>
-        public override IEnumerable<T> Find<T>(Func<T, bool> filter)
+        public override IEnumerable<T> Find<T>(Expression<Func<T, bool>> filter)
         {
             using (var session = DocumentStore.OpenSession())
             {
