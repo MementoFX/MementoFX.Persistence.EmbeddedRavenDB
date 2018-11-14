@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Memento.Persistence.EmbeddedRavenDB.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Mastreeno ltd")]
+[assembly: AssemblyCompany("Managed Designs")]
 [assembly: AssemblyProduct("MementoFX")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("© 2013-2018 Andrea Saltarello, Managed Designs")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
